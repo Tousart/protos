@@ -2,10 +2,12 @@ syntax = "proto3";
 
 package auth;
 
+import "google/protobuf/empty.proto";
+
 option go_package = "tousart.sso.v1;ssov1";
 
 service Auth {
-    rpc Register (RegisterRequest) returns (RegisterResponse);
+    rpc Register (RegisterRequest) returns (google.protobuf.Empty);
     rpc Login (LoginRequest) returns (LoginResponse);
 }
 
@@ -13,10 +15,6 @@ message RegisterRequest {
     string login = 1;
     string password = 2;
     string email = 3;
-}
-
-message RegisterResponse {
-    string user_id = 1;
 }
 
 message LoginRequest {
