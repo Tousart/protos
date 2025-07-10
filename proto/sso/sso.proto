@@ -20,7 +20,6 @@ message RegisterRequest {
 message LoginRequest {
     string login = 1;
     string password = 2;
-    string user_id = 3;
 }
 
 message LoginResponse {
